@@ -1,3 +1,9 @@
-export const Header =()=> {
-    return <div>Header</div>
+type HeaderType = {
+    titleForHeader: string
+}
+
+export const Header = (props: HeaderType) => {
+    return (
+        <div>{props.titleForHeader}</div>
+    )
 }

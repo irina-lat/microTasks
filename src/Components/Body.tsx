@@ -1,3 +1,9 @@
-export const Body = ()=> {
-    return (<div>Complete BODY</div>)
+type HeaderType = {
+    titleForBody: string
+}
+
+export const Body = (props: HeaderType) => {
+    return (
+        <div>{props.titleForBody}</div>
+    )
 }
