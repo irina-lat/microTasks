@@ -9,6 +9,8 @@ import {ComponentsMoney} from "./Components/CimponentMoney";
 import {ComponentOne} from "./Components/ComponentOne";
 import {ComponentTwo} from "./Components/ComponentTwo";
 import {ButtonNum} from "./Components/ComponentNum";
+import {Inputs} from "./Components/Inputs";
+import {Buttons} from "./Components/Buttons";
 
 function App() {
     const [money, setMoney] = useState([
@@ -47,6 +49,25 @@ function App() {
         console.log('Stupid')
     }
 
+    let [message, setMessage] = useState([
+        {message: 'message1'},
+        {message: 'message2'},
+        {message: 'message3'},
+    ])
+
+    const addMessage=(title:string)=>{
+        let newMessage ={message:title}
+        setMessage([newMessage, ...message])
+    }
+
+    let [title, setTitle]=useState('')
+    console.log(title)
+
+    function callBackButtonHandler() {
+        addMessage(title)
+        setTitle('')
+    }
+
     return (
         <div>
             microTasks
@@ -64,7 +85,14 @@ function App() {
 
             <ComponentsMoney money={money}/>
 
-            <InputFull/>
+            <InputFull addMessage={addMessage} />
+            {message.map((el,index)=>{
+                return (
+                    <div key={index}>{el.message}</div>
+                )
+                })}
+            <Inputs setTitle={setTitle}  title={title} />
+            <Buttons name={'+'} callBack={callBackButtonHandler} />
 
             <hr/>
         </div>
