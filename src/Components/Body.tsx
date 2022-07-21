@@ -7,6 +7,7 @@ export const Body = (props: HeaderType) => {
         <div>
             {props.titleForBody}
             <p>Lorem Lorem Lorem Lorem Lorem</p>
+            <p>Lorem Lorem Lorem Lorem Lorem</p>
         </div>
     )
 }
