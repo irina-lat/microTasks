@@ -11,6 +11,7 @@ import {ComponentTwo} from "./Components/ComponentTwo";
 import {ButtonNum} from "./Components/ComponentNum";
 import {Inputs} from "./Components/Inputs";
 import {Buttons} from "./Components/Buttons";
+import {New} from "./Components/New";
 
 function App() {
     const [money, setMoney] = useState([
@@ -23,6 +24,16 @@ function App() {
         {banknots: 'Dollars', value: 50, number: ' x1234567890'},
         {banknots: 'RUBLS', value: 50, number: ' v1234567890'},
     ]);
+
+    const [work, setWork] = useState([
+        {id: 1, today: '10', tomorrow: 'two'},
+        {id: 2, today: '20', tomorrow: 'two'},
+        {id: 3, today: '30', tomorrow: 'two'},
+        {id: 4, today: '40', tomorrow: 'two'},
+        {id: 5, today: '50', tomorrow: 'five'},
+        {id: 6, today: '60', tomorrow: 'five'},
+        {id: 7, today: '70', tomorrow: 'five'},
+    ])
 
     const topCars = [
         {manufacturer: 'BMW', model: 'm5cs'},
@@ -55,13 +66,12 @@ function App() {
         {message: 'message3'},
     ])
 
-    const addMessage=(title:string)=>{
-        let newMessage ={message:title}
+    const addMessage = (title: string) => {
+        let newMessage = {message: title}
         setMessage([newMessage, ...message])
     }
 
-    let [title, setTitle]=useState('')
-    console.log(title)
+    let [title, setTitle] = useState('')
 
     function callBackButtonHandler() {
         addMessage(title)
@@ -85,14 +95,16 @@ function App() {
 
             <ComponentsMoney money={money}/>
 
-            <InputFull addMessage={addMessage} />
-            {message.map((el,index)=>{
+            <InputFull addMessage={addMessage}/>
+            {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
                 )
-                })}
-            <Inputs setTitle={setTitle}  title={title} />
-            <Buttons name={'+'} callBack={callBackButtonHandler} />
+            })}
+            <Inputs setTitle={setTitle} title={title}/>
+            <Buttons name={'+'} callBack={callBackButtonHandler}/>
+            <New work={work}/>
+
 
             <hr/>
         </div>
