@@ -4,6 +4,9 @@ type HeaderType = {
 
 export const Body = (props: HeaderType) => {
     return (
-        <div>{props.titleForBody}</div>
+        <div>
+            {props.titleForBody}
+            <p>Lorem Lorem Lorem Lorem Lorem</p>
+        </div>
     )
 }
