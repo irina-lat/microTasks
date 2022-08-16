@@ -12,6 +12,7 @@ import {ButtonNum} from "./Components/ComponentNum";
 import {Inputs} from "./Components/Inputs";
 import {Buttons} from "./Components/Buttons";
 import {New} from "./Components/New";
+import AppTodo from "./Components/todo/AppTodo";
 
 function App() {
     const [money, setMoney] = useState([
@@ -104,6 +105,7 @@ function App() {
             <Inputs setTitle={setTitle} title={title}/>
             <Buttons name={'+'} callBack={callBackButtonHandler}/>
             <New work={work}/>
+            <AppTodo/>
 
 
             <hr/>
