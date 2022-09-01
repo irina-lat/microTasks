@@ -15,6 +15,7 @@ import {New} from "./Components/New";
 import AppTodo from "./Components/todo/AppTodo";
 
 function App() {
+
     const [money, setMoney] = useState([
         {banknots: 'Dollars', value: 100, number: ' a1234567890'},
         {banknots: 'Dollars', value: 50, number: ' z1234567890'},
